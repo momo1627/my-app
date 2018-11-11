@@ -1,0 +1,46 @@
+[
+    {
+        "$id": "1",
+        "lecturerCourses": [],
+        "studentCourses": [],
+        "id": 1,
+        "title": "Physics",
+        "description": "Physics taught by the Chinese teacher",
+        "fee": 120.00,
+        "maxStudent": 10,
+        "language": "csharp"
+    },
+    {
+        "$id": "2",
+        "lecturerCourses": [],
+        "studentCourses": [],
+        "id": 2,
+        "title": "JavaScript",
+        "description": "What is \"this\"???",
+        "fee": 1000.00,
+        "maxStudent": 10,
+        "language": ""
+    },
+    {
+        "$id": "3",
+        "lecturerCourses": [],
+        "studentCourses": [],
+        "id": 7,
+        "title": "test",
+        "description": "You bet!",
+        "fee": 12.00,
+        "maxStudent": 10,
+        "language": ""
+    },
+    {
+        "$id": "4",
+        "lecturerCourses": [],
+        "studentCourses": [],
+        "id": 9,
+        "title": "Java",
+        "description": "The most tedious language on the earth",
+        "fee": 100.00,
+        "maxStudent": 10,
+        "language": ""
+    }
+]

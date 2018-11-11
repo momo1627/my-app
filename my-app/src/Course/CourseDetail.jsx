@@ -101,7 +101,7 @@ export default class CourseDetail extends React.Component{
                 <TextArea onChange={this.handleFieldChange} name="description" id="" cols="30" rows="10" placeholder='Description for the'  value={description}/>
                 {/* <textarea onChange={this.handleFieldChange} name="description" id="" cols="30" rows="10" placeholder='Description for the'  value={description}></textarea> */}
                 {/* <button type='submit'>{this.isCreating() ? 'Create' : 'Update'}</button> */}
-                <Button type='submit'>{this.isCreating() ? 'Create' : 'Update'}</Button>
+                {/* <Button type='submit'>{this.isCreating() ? 'Create' : 'Update'}</Button> */}
         </form>
         )
     }

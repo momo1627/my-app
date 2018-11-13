@@ -27,7 +27,7 @@ export function getLecturersById(id){
             .catch(reject)
     })
 }
-export function updateLecturersById(id,value){
+export function updateLecturers(id,value){
     return new Promise((resolve,reject)=>{
         axios
             .put(`https://lms1210.azurewebsites.net/api/lecturers/${id}`,{...value,id})
@@ -41,7 +41,7 @@ export function updateLecturersById(id,value){
             .catch(reject)
     })
 }
-export function createLecturersById(lecturers){
+export function createLecturers(lecturers){
     return new Promise((resolve,reject)=>{
         axios
             .post(`https://lms1210.azurewebsites.net/api/lecturers/`,lecturers)

@@ -1,26 +1,42 @@
 import React, { Component } from 'react';
+/*global google*/
 import logo from './logo.svg';
+import axios from 'axios'
 import './App.css';
-
+const API_KEY = 'AIzaSyC0W_7Xof88qi51CnXgWEJVSOxyJFeKzME'
 class App extends Component {
+  constructor(props) {
+    super(props);
+    // create a ref to store the textInput DOM element
+    this.target = React.createRef();
+  }
+  componentDidMount(){
+    this.getGeocode().then((response)=>{
+      const {results} = response.data;
+      const {geometry:{location}} = results[0];
+      const latLng = new google.maps.LatLng(location.lat, location.lng);
+      this.map = new google.maps.Map(this.target,{
+        zoom:14,
+        center:latLng,
+      })
+      this.marker = new google.maps.Marker({
+        map:this.map,
+        position:latLng
+      })
+
+    })
+    
+  }
+  getGeocode(){
+    const address = encodeURIComponent(this.props.address);
+    const requestUri = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${API_KEY}`
+    return axios.get(requestUri)
+  }
   render() {
+    // tell React that we want to associate the <input> ref
+    // with the `textInput` that we created in the constructor
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <div className='container' ref={this.target}></div>
     );
   }
 }

@@ -5,7 +5,7 @@
             "name": "Run hello.js",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/01_node.js",
+            "program": "${workspaceRoot}/learning_summary/node_liaoxuefeng/01_node.js",
             "stopOnEntry": false,
             "args": [],
             "cwd": "${workspaceRoot}",
@@ -17,9 +17,7 @@
             "env": {
                 "NODE_ENV": "development"
             },
-            "externalConsole": false,
             "sourceMaps": false,
-            "outDir": null
         }
     ]
 }

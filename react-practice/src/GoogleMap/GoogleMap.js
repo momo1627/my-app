@@ -1,7 +1,7 @@
 import React from 'react';
 /*global google*/
 import axios from 'axios'
-const API_KEY = 'AIzaSyC0W_7Xof88qi51CnXgWEJVSOxyJFeKzME'
+
 class GoogleMap extends React.Component {
   constructor(props) {
     super(props);

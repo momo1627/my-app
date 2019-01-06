@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!-- 创建一个表单像后台发送数据 -->
+    <form action="">
+        <input type="text" id='user'><br>
+        <input type="password" id='password'><br>
+        <input type="button" id='submit' value='login'>
+    </form>
+</body>
+<script>
+// 使用ajax像后台发送数据
+var user,password;
+document.getElementById('submit').addEventListener('click',()=>{
+    user = document.getElementById('user').value;
+    password = document.getElementById('password').value;
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = ()=>{
+        if(request.readyState ===4){
+            if(request.status === 200){
+                console.log('success')
+            }
+        }
+    }
+    request.open('POST','http://localhost:3000/login')
+    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    request.send(`user=${user}&password=${password}`)
+
+})
+</script>
+</html>

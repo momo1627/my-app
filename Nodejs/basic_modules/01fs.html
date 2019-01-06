@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>File System</h1>
+        <p>所有文件系统都有异步同步格式</p>  
+        <dl>
+            <dt>异步格式</dt>
+            <dd>
+                <ul>
+                    <li>异步方法的最后一个参数都是回调函数</li>
+                    <li>回调参数的第一个参数都是err对象</li>
+                    <li>其他参数根据方法不同</li>
+                    <li>回调的抛出错误，可以外层嵌套try catch处理错误</li>
+                </ul>
+            </dd>
+            <dt>异步回调顺序</dt>
+            <dd>多个fs方法回调处理顺序不确定</dd>
+            <dd>如需顺序完成多个fs方法回调，则需将后一个写入前一个回调函数里</dd>
+        </dl>
+    </main>
+</body>
+</html>

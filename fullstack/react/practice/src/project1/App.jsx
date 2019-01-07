@@ -13,18 +13,21 @@ export default class Page2 extends React.Component{
         }
     }
     
-    componentDidMount(){
+    async componentDidMount(){
         // axios.get('http://localhost:8000/items').then(response=>{
         //     const source = response.data;
         //     this.setState({mytext:source})
         // })
-        fetch('http://localhost:8000/items',{method:"GET"}).then(
-            (data)=>{return data.text()}
-        ).then(
-            (data)=>{
-                this.setState({mytext:data})
-            }
-        )
+        // fetch('http://localhost:8000/items',{method:"GET"}).then(
+        //     (data)=>{return data.text()}
+        // ).then(
+        //     (data)=>{
+        //         this.setState({mytext:data})
+        //     }
+        // )
+        const result = await axios.get('http://localhost:8000/items');
+        const source = result.data;
+        this.setState({mytext:source})
     }
     render(){
         return(

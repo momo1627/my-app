@@ -9,12 +9,12 @@ app.all('*',(req,res,next)=>{
     next()
 })
 app.get('/items',(req,res)=>{
-    // let mytext = {
-    //     name:'milk',
-    //     price:'$4',
-    //     date:'today',
-    // }
-    // res.send(mytext)
+    let mytext = {
+        name:'milk',
+        price:'$4',
+        date:'today',
+    }
+    res.send(mytext)
     res.send('haha')
 })
 
